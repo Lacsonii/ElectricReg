@@ -19,11 +19,11 @@ namespace ElectricReg
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private async void btnSignIn_Click(object sender, EventArgs e)
         {
             try
             {
-                authRepository.SignIn(textBoxEmail.Text, textBoxpass.Text);
+                await authRepository.SignIn(textBoxEmail.Text, textBoxpass.Text);
                 Lectures lectures = new Lectures();
                 lectures.Show();
             }

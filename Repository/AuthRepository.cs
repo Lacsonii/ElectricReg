@@ -1,4 +1,5 @@
 ﻿using Postgrest;
+using Supabase.Gotrue;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,12 @@ namespace ElectricReg.Repository
 
         DatabaseService DatabaseService = new DatabaseService();
 
-        public async void SignIn(String email, String password) {
+        public async Task<Session> SignIn(String email, String password) {
           try {
                 var session = await DatabaseService.getClient.Auth.SignIn(email, password);
 
                 Console.WriteLine(session.User.Email);
+                return session;
 
             } catch (Exception error){
 
