@@ -22,7 +22,7 @@ namespace ElectricReg.Repository
         {
             try
             {
-                var results = await DatabaseService.getClient.From<RegisterModel>().Get();
+                var results = await DatabaseService.getClient.From<RegisterModel>().Select(row => new object[] { row.Id, row.StudentID }).Where(row => row.CreatedAt == date.ToUniversalTime()).Get();
 
                 var students = results.Models;
 
