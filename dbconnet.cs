@@ -10,8 +10,26 @@ namespace ElectricReg
 {
     public class dbconnet
     {
-        //Open Ini File
-        
+        //Init Supabase
+        public async void initSupabase()
+        {
+            var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+            var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
+
+            var options = new Supabase.SupabaseOptions
+            {
+                AutoConnectRealtime = true
+            };
+
+            var supabase = new Supabase.Client(url, key, options);
+            await supabase.InitializeAsync();
+
+            if (connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+        }
+
 
 
         MySqlConnection connection = new MySqlConnection("Server = http://aws-0-eu-central-1.pooler.supabase.com; userID = postgres.csqaiejkcporxddqwans; password = UKFiSAiIKkAjjFoi; Port = 5432; database = postgres");
