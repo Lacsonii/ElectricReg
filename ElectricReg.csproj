@@ -163,10 +163,12 @@
     <Compile Include="Lectures.Designer.cs">
       <DependentUpon>Lectures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\LecturerModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
+    <Compile Include="Repository\LecturerRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>

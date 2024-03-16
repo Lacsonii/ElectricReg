@@ -23,7 +23,7 @@ namespace ElectricReg
         {
             try
             {
-                await authRepository.SignIn(textBoxEmail.Text, textBoxpass.Text);
+                await authRepository.SignIn("dnlmgwi@gmail.com", "12345678");
                 Lectures lectures = new Lectures();
                 lectures.Show();
             }
