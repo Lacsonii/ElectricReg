@@ -13,6 +13,7 @@ namespace ElectricReg
 {
     public partial class SignIn : Form
     {
+        AuthRepository authRepository = new AuthRepository();
         public SignIn()
         {
             InitializeComponent();
@@ -22,8 +23,9 @@ namespace ElectricReg
         {
             try
             {
-                AuthRepository authRepository = new AuthRepository();
                 authRepository.SignIn(textBoxEmail.Text, textBoxpass.Text);
+                Lectures lectures = new Lectures();
+                lectures.Show();
             }
             catch (Exception error)
             {
