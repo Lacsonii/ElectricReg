@@ -15,7 +15,9 @@ namespace ElectricReg
         public Home()
         {
             InitializeComponent();
+
         }
+
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -33,11 +35,13 @@ namespace ElectricReg
 
         private void Home_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Server Name or IP Address was not found. Please contact your system Administrator", "Electric Register", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            try {
 
-            this.Hide();
-            connection addconn = new connection();
-            addconn.ShowDialog();
+                DatabaseService dbconnet = new DatabaseService();
+                dbconnet.initSupabase();
+            } catch (Exception error) { 
+                MessageBox.Show(error.Message);
+            }
         }
     }
 }

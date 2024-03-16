@@ -42,7 +42,7 @@ namespace ElectricReg
             home.ShowDialog();
         }
         private void Lectures_Load(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 MySqlConnection connect = new MySqlConnection("Server = http://aws-0-eu-central-1.pooler.supabase.com; userID = postgres.csqaiejkcporxddqwans; password = UKFiSAiIKkAjjFoi; Port = 5432; database = postgres");
@@ -60,7 +60,14 @@ namespace ElectricReg
                 // Handle the exception in a user-friendly way, e.g., displaying a message box
                 MessageBox.Show("Error: Unable to convert date/time value to System.DateTime. Please check the data in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // You can also log the error or perform other actions here as needed
-            }
+            }*/
+        }
+
+        private void btnAdduser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Lecturer lecturer = new Lecturer();
+            lecturer.ShowDialog();
         }
     }
 }

@@ -35,5 +35,10 @@ namespace ElectricReg
             SignIn signIn = new SignIn();
             signIn.ShowDialog();
         }
+
+        private void connection_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
