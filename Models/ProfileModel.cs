@@ -1,10 +1,7 @@
 ﻿using Postgrest.Attributes;
 using Postgrest.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
 namespace ElectricReg.Models
 {
@@ -12,7 +9,7 @@ namespace ElectricReg.Models
      class ProfileModel : BaseModel
     {
         [PrimaryKey("id", false)]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
 
         [Column("student_id")]
         public string StudentID { get; set; }
@@ -22,5 +19,19 @@ namespace ElectricReg.Models
 
         [Column("avatar_url")]
         public string AvatarUrl { get; set; }
+
+        [Column("updated_at")]
+        public string UpdatedAt { get =>_updatedAt?.ToString("o"); set =>_updatedAt = ParseDate(value); }
+
+        private DateTimeOffset? _updatedAt;
+
+        protected static DateTimeOffset? ParseDate(string dateString)
+        {
+            if (DateTimeOffset.TryParse(dateString, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal, out var dateTime))
+            {
+                return dateTime;
+            }
+            return null;
+        }
     }
 }
