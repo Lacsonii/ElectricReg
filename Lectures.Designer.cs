@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lectures));
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -51,8 +52,10 @@
             this.textBoxStudentName = new System.Windows.Forms.TextBox();
             this.textBoxStudentID = new System.Windows.Forms.TextBox();
             this.btnSignOut = new System.Windows.Forms.Button();
+            this.refreshIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxprofile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,12 +75,13 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(694, 137);
+            this.btnSearch.Location = new System.Drawing.Point(693, 137);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(66, 23);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -130,6 +134,7 @@
             this.btnMA.TabIndex = 6;
             this.btnMA.Text = "Most Attendant";
             this.btnMA.UseVisualStyleBackColor = false;
+            this.btnMA.Click += new System.EventHandler(this.btnMA_Click);
             // 
             // btnNA
             // 
@@ -142,6 +147,7 @@
             this.btnNA.TabIndex = 7;
             this.btnNA.Text = "Never Attended";
             this.btnNA.UseVisualStyleBackColor = true;
+            this.btnNA.Click += new System.EventHandler(this.btnNA_Click);
             // 
             // btnPA
             // 
@@ -156,6 +162,7 @@
             this.btnPA.TabIndex = 8;
             this.btnPA.Text = "Poor Attendant";
             this.btnPA.UseVisualStyleBackColor = false;
+            this.btnPA.Click += new System.EventHandler(this.btnPA_Click);
             // 
             // btnAA
             // 
@@ -170,6 +177,7 @@
             this.btnAA.TabIndex = 9;
             this.btnAA.Text = "Average attendant";
             this.btnAA.UseVisualStyleBackColor = false;
+            this.btnAA.Click += new System.EventHandler(this.btnAA_Click);
             // 
             // btnHome
             // 
@@ -178,7 +186,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(38, 33);
+            this.btnHome.Location = new System.Drawing.Point(12, 12);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(51, 25);
             this.btnHome.TabIndex = 10;
@@ -228,6 +236,7 @@
             this.dateTimeStart.Name = "dateTimeStart";
             this.dateTimeStart.Size = new System.Drawing.Size(131, 20);
             this.dateTimeStart.TabIndex = 14;
+            this.dateTimeStart.ValueChanged += new System.EventHandler(this.dateTimeStart_ValueChanged);
             // 
             // dateTimeEnd
             // 
@@ -310,12 +319,25 @@
             this.btnSignOut.UseVisualStyleBackColor = false;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
+            // refreshIcon
+            // 
+            this.refreshIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshIcon.Image = ((System.Drawing.Image)(resources.GetObject("refreshIcon.Image")));
+            this.refreshIcon.Location = new System.Drawing.Point(69, 12);
+            this.refreshIcon.Name = "refreshIcon";
+            this.refreshIcon.Size = new System.Drawing.Size(28, 25);
+            this.refreshIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.refreshIcon.TabIndex = 23;
+            this.refreshIcon.TabStop = false;
+            this.refreshIcon.Click += new System.EventHandler(this.refreshIcon_Click);
+            // 
             // Lectures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1049, 532);
+            this.Controls.Add(this.refreshIcon);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.textBoxStudentID);
             this.Controls.Add(this.textBoxStudentName);
@@ -344,6 +366,7 @@
             this.Load += new System.EventHandler(this.Lectures_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxprofile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +397,6 @@
         private System.Windows.Forms.TextBox textBoxStudentName;
         private System.Windows.Forms.TextBox textBoxStudentID;
         private System.Windows.Forms.Button btnSignOut;
+        private System.Windows.Forms.PictureBox refreshIcon;
     }
 }
