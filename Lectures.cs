@@ -240,6 +240,7 @@ namespace ElectricReg
             textBoxStudentName.Text = "";
             textBoxStudentID.Text = "";
             pictureBoxprofile.Refresh();
+            return;
         }
 
         private async Task LoadImageFromUrlAsync(string imageUrl, PictureBox pictureBox)
