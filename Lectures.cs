@@ -273,10 +273,6 @@ namespace ElectricReg
                 
                 await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
-                string picture = await repository.getProfilePicture(data.AvatarUrl.ToString());
-
-                Console.WriteLine(picture);
-
             }
             catch (Exception error)
             {
