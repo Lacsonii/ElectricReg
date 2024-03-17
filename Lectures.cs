@@ -42,19 +42,19 @@ namespace ElectricReg
         private async void Lectures_method()
         {
              try
-            {
+             {
                 LecturerRepository repository = new LecturerRepository();
                 var  data = await repository.getStudents(DateTime.UtcNow);
                 DataTable studentTable = new DataTable();
 
                 dataGridViewStudents.DataSource = data;
-            }
-            catch (Exception error)
-            {
+             }
+             catch (Exception error)
+             {
                 // Handle the exception in a user-friendly way, e.g., displaying a message box
                 MessageBox.Show("Error: Unable to convert date/time value to System.DateTime. Please check the data in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // You can also log the error or perform other actions here as needed
-            }
+             }
         }
 
         private async void Lectures_Load(object sender, EventArgs e)
@@ -80,6 +80,13 @@ namespace ElectricReg
             this.Hide();
             Lecturer lecturer = new Lecturer();
             lecturer.ShowDialog();
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home home = new Home();
+            home.ShowDialog();
         }
     }
 }

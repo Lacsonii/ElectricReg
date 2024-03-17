@@ -219,6 +219,8 @@
     <None Include="Resources\register.ini" />
     <None Include="Resources\Bluetooth-removebg.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

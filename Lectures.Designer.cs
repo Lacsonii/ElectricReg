@@ -40,17 +40,28 @@
             this.btnAA = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnAdduser = new System.Windows.Forms.Button();
+            this.labelstartdate = new System.Windows.Forms.Label();
+            this.labelendDate = new System.Windows.Forms.Label();
+            this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.labelprofile = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxStudentName = new System.Windows.Forms.TextBox();
+            this.textBoxStudentID = new System.Windows.Forms.TextBox();
+            this.btnSignOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(464, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(450, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 29);
+            this.label1.Size = new System.Drawing.Size(185, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Attendance";
             // 
@@ -61,20 +72,18 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(613, 119);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(694, 137);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(88, 28);
+            this.btnSearch.Size = new System.Drawing.Size(66, 23);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(440, 122);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(564, 139);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(172, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(130, 20);
             this.textBoxSearch.TabIndex = 2;
             // 
             // labelmodules
@@ -83,10 +92,9 @@
             this.labelmodules.BackColor = System.Drawing.Color.Blue;
             this.labelmodules.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelmodules.ForeColor = System.Drawing.Color.White;
-            this.labelmodules.Location = new System.Drawing.Point(848, 122);
-            this.labelmodules.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelmodules.Location = new System.Drawing.Point(804, 139);
             this.labelmodules.Name = "labelmodules";
-            this.labelmodules.Size = new System.Drawing.Size(100, 25);
+            this.labelmodules.Size = new System.Drawing.Size(77, 20);
             this.labelmodules.TabIndex = 3;
             this.labelmodules.Text = "Modules ";
             // 
@@ -94,21 +102,19 @@
             // 
             this.comboBoxPrograms.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBoxPrograms.FormattingEnabled = true;
-            this.comboBoxPrograms.Location = new System.Drawing.Point(951, 122);
-            this.comboBoxPrograms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPrograms.Location = new System.Drawing.Point(881, 139);
             this.comboBoxPrograms.Name = "comboBoxPrograms";
-            this.comboBoxPrograms.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxPrograms.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPrograms.TabIndex = 4;
             // 
             // dataGridViewStudents
             // 
             this.dataGridViewStudents.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(136, 155);
-            this.dataGridViewStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewStudents.Location = new System.Drawing.Point(270, 166);
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.RowHeadersWidth = 51;
-            this.dataGridViewStudents.Size = new System.Drawing.Size(976, 332);
+            this.dataGridViewStudents.Size = new System.Drawing.Size(732, 270);
             this.dataGridViewStudents.TabIndex = 5;
             // 
             // btnMA
@@ -118,10 +124,9 @@
             this.btnMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMA.ForeColor = System.Drawing.Color.Black;
-            this.btnMA.Location = new System.Drawing.Point(136, 500);
-            this.btnMA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMA.Location = new System.Drawing.Point(270, 446);
             this.btnMA.Name = "btnMA";
-            this.btnMA.Size = new System.Drawing.Size(148, 34);
+            this.btnMA.Size = new System.Drawing.Size(111, 28);
             this.btnMA.TabIndex = 6;
             this.btnMA.Text = "Most Attendant";
             this.btnMA.UseVisualStyleBackColor = false;
@@ -131,10 +136,9 @@
             this.btnNA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNA.Location = new System.Drawing.Point(684, 500);
-            this.btnNA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNA.Location = new System.Drawing.Point(681, 446);
             this.btnNA.Name = "btnNA";
-            this.btnNA.Size = new System.Drawing.Size(148, 34);
+            this.btnNA.Size = new System.Drawing.Size(111, 28);
             this.btnNA.TabIndex = 7;
             this.btnNA.Text = "Never Attended";
             this.btnNA.UseVisualStyleBackColor = true;
@@ -146,10 +150,9 @@
             this.btnPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPA.ForeColor = System.Drawing.Color.Black;
-            this.btnPA.Location = new System.Drawing.Point(505, 500);
-            this.btnPA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPA.Location = new System.Drawing.Point(547, 446);
             this.btnPA.Name = "btnPA";
-            this.btnPA.Size = new System.Drawing.Size(148, 34);
+            this.btnPA.Size = new System.Drawing.Size(111, 28);
             this.btnPA.TabIndex = 8;
             this.btnPA.Text = "Poor Attendant";
             this.btnPA.UseVisualStyleBackColor = false;
@@ -161,10 +164,9 @@
             this.btnAA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAA.ForeColor = System.Drawing.Color.Black;
-            this.btnAA.Location = new System.Drawing.Point(315, 500);
-            this.btnAA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAA.Location = new System.Drawing.Point(404, 446);
             this.btnAA.Name = "btnAA";
-            this.btnAA.Size = new System.Drawing.Size(160, 34);
+            this.btnAA.Size = new System.Drawing.Size(120, 28);
             this.btnAA.TabIndex = 9;
             this.btnAA.Text = "Average attendant";
             this.btnAA.UseVisualStyleBackColor = false;
@@ -176,10 +178,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.Location = new System.Drawing.Point(51, 41);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Location = new System.Drawing.Point(38, 33);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(68, 31);
+            this.btnHome.Size = new System.Drawing.Size(51, 25);
             this.btnHome.TabIndex = 10;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -192,20 +193,140 @@
             this.btnAdduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdduser.ForeColor = System.Drawing.Color.White;
-            this.btnAdduser.Location = new System.Drawing.Point(986, 500);
+            this.btnAdduser.Location = new System.Drawing.Point(908, 446);
+            this.btnAdduser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdduser.Name = "btnAdduser";
-            this.btnAdduser.Size = new System.Drawing.Size(126, 34);
+            this.btnAdduser.Size = new System.Drawing.Size(94, 28);
             this.btnAdduser.TabIndex = 11;
             this.btnAdduser.Text = "Add User";
             this.btnAdduser.UseVisualStyleBackColor = false;
             this.btnAdduser.Click += new System.EventHandler(this.btnAdduser_Click);
             // 
+            // labelstartdate
+            // 
+            this.labelstartdate.AutoSize = true;
+            this.labelstartdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelstartdate.Location = new System.Drawing.Point(267, 111);
+            this.labelstartdate.Name = "labelstartdate";
+            this.labelstartdate.Size = new System.Drawing.Size(70, 17);
+            this.labelstartdate.TabIndex = 12;
+            this.labelstartdate.Text = "Start date";
+            // 
+            // labelendDate
+            // 
+            this.labelendDate.AutoSize = true;
+            this.labelendDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelendDate.Location = new System.Drawing.Point(267, 139);
+            this.labelendDate.Name = "labelendDate";
+            this.labelendDate.Size = new System.Drawing.Size(65, 17);
+            this.labelendDate.TabIndex = 13;
+            this.labelendDate.Text = "End date";
+            // 
+            // dateTimeStart
+            // 
+            this.dateTimeStart.Location = new System.Drawing.Point(345, 108);
+            this.dateTimeStart.Name = "dateTimeStart";
+            this.dateTimeStart.Size = new System.Drawing.Size(131, 20);
+            this.dateTimeStart.TabIndex = 14;
+            // 
+            // dateTimeEnd
+            // 
+            this.dateTimeEnd.Location = new System.Drawing.Point(345, 139);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(131, 20);
+            this.dateTimeEnd.TabIndex = 15;
+            // 
+            // labelprofile
+            // 
+            this.labelprofile.AutoSize = true;
+            this.labelprofile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelprofile.Location = new System.Drawing.Point(74, 137);
+            this.labelprofile.Name = "labelprofile";
+            this.labelprofile.Size = new System.Drawing.Size(131, 24);
+            this.labelprofile.TabIndex = 16;
+            this.labelprofile.Text = "Student Profile";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ElectricReg.Properties.Resources.images_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 185);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(137, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 326);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 370);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Student ID";
+            // 
+            // textBoxStudentName
+            // 
+            this.textBoxStudentName.BackColor = System.Drawing.Color.White;
+            this.textBoxStudentName.Location = new System.Drawing.Point(112, 323);
+            this.textBoxStudentName.Name = "textBoxStudentName";
+            this.textBoxStudentName.ReadOnly = true;
+            this.textBoxStudentName.Size = new System.Drawing.Size(140, 20);
+            this.textBoxStudentName.TabIndex = 20;
+            // 
+            // textBoxStudentID
+            // 
+            this.textBoxStudentID.BackColor = System.Drawing.Color.White;
+            this.textBoxStudentID.Location = new System.Drawing.Point(112, 370);
+            this.textBoxStudentID.Name = "textBoxStudentID";
+            this.textBoxStudentID.ReadOnly = true;
+            this.textBoxStudentID.Size = new System.Drawing.Size(140, 20);
+            this.textBoxStudentID.TabIndex = 21;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSignOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.Color.White;
+            this.btnSignOut.Location = new System.Drawing.Point(12, 493);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(65, 28);
+            this.btnSignOut.TabIndex = 22;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // Lectures
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1207, 585);
+            this.ClientSize = new System.Drawing.Size(1049, 532);
+            this.Controls.Add(this.btnSignOut);
+            this.Controls.Add(this.textBoxStudentID);
+            this.Controls.Add(this.textBoxStudentName);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelprofile);
+            this.Controls.Add(this.dateTimeEnd);
+            this.Controls.Add(this.dateTimeStart);
+            this.Controls.Add(this.labelendDate);
+            this.Controls.Add(this.labelstartdate);
             this.Controls.Add(this.btnAdduser);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAA);
@@ -218,11 +339,11 @@
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Lectures";
             this.Text = "Lectures";
             this.Load += new System.EventHandler(this.Lectures_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +363,16 @@
         private System.Windows.Forms.Button btnAA;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAdduser;
+        private System.Windows.Forms.Label labelstartdate;
+        private System.Windows.Forms.Label labelendDate;
+        private System.Windows.Forms.DateTimePicker dateTimeStart;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd;
+        private System.Windows.Forms.Label labelprofile;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxStudentName;
+        private System.Windows.Forms.TextBox textBoxStudentID;
+        private System.Windows.Forms.Button btnSignOut;
     }
 }

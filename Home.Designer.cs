@@ -38,11 +38,11 @@
             // 
             this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.Location = new System.Drawing.Point(306, 53);
+            this.labelHeader.Location = new System.Drawing.Point(296, 53);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(256, 29);
+            this.labelHeader.Size = new System.Drawing.Size(278, 29);
             this.labelHeader.TabIndex = 0;
-            this.labelHeader.Text = "Electric Calss Register";
+            this.labelHeader.Text = "Bluetooth Class Register";
             // 
             // btnSignIn
             // 
@@ -51,7 +51,7 @@
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(397, 316);
+            this.btnSignIn.Location = new System.Drawing.Point(391, 360);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(75, 31);
             this.btnSignIn.TabIndex = 2;

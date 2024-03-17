@@ -48,5 +48,17 @@ namespace ElectricReg
 
 
         }
+
+        private void checkBoxconfirm_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxShowPass.Checked)
+            {
+                textBoxpass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxpass.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
