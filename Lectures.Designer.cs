@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -120,6 +121,7 @@
             this.dataGridViewStudents.RowHeadersWidth = 51;
             this.dataGridViewStudents.Size = new System.Drawing.Size(732, 270);
             this.dataGridViewStudents.TabIndex = 5;
+            this.dataGridViewStudents.CellClick += dataGridViewStudents_CellClick;
             // 
             // btnMA
             // 
@@ -236,7 +238,6 @@
             this.dateTimeStart.Name = "dateTimeStart";
             this.dateTimeStart.Size = new System.Drawing.Size(131, 20);
             this.dateTimeStart.TabIndex = 14;
-            this.dateTimeStart.ValueChanged += new System.EventHandler(this.dateTimeStart_ValueChanged);
             // 
             // dateTimeEnd
             // 
