@@ -5,8 +5,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.IO.Packaging;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -240,6 +242,21 @@ namespace ElectricReg
             pictureBoxprofile.Refresh();
         }
 
+        private async Task LoadImageFromUrlAsync(string imageUrl, PictureBox pictureBox)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Get the image data as a stream
+                Stream stream = await client.GetStreamAsync(imageUrl);
+
+                // Create an Image object from the stream
+                Image image = Image.FromStream(stream);
+
+                // Set the PictureBox's Image property to this image
+                pictureBox.Image = image;
+            }
+        }
+
         private async void dataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string studentID = dataGridViewStudents.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -253,6 +270,8 @@ namespace ElectricReg
                 Console.WriteLine(data);
                 textBoxStudentName.Text = data.StudnetName;
                 textBoxStudentID.Text = data.StudentID;
+                
+                await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
                 string picture = await repository.getProfilePicture(data.AvatarUrl.ToString());
 
