@@ -163,6 +163,7 @@
     <Compile Include="Lectures.Designer.cs">
       <DependentUpon>Lectures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\LecturerModel.cs" />
     <Compile Include="Program.cs" />
@@ -221,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\431517324_1105675960636479_1578520677723923476_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

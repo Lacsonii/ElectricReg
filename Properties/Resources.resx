@@ -124,4 +124,7 @@
   <data name="images-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="431517324_1105675960636479_1578520677723923476_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\431517324_1105675960636479_1578520677723923476_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
