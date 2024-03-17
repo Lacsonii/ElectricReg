@@ -114,8 +114,6 @@ namespace ElectricReg.Repository
 
                 var student = results.Model;
 
-                Console.WriteLine(results.Model.AvatarUrl.ToString());
-
                
                 return student;
 

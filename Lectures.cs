@@ -244,16 +244,20 @@ namespace ElectricReg
 
         private async Task LoadImageFromUrlAsync(string imageUrl, PictureBox pictureBox)
         {
-            using (HttpClient client = new HttpClient())
-            {
-                // Get the image data as a stream
-                Stream stream = await client.GetStreamAsync(imageUrl);
+            try {
+                using (HttpClient client = new HttpClient())
+                {
+                    // Get the image data as a stream
+                    Stream stream = await client.GetStreamAsync(imageUrl);
 
-                // Create an Image object from the stream
-                Image image = Image.FromStream(stream);
+                    // Create an Image object from the stream
+                    Image image = Image.FromStream(stream);
 
-                // Set the PictureBox's Image property to this image
-                pictureBox.Image = image;
+                    // Set the PictureBox's Image property to this image
+                    pictureBox.Image = image;
+                }
+            } catch (Exception error) {
+                throw new Exception("User has no profile picture");
             }
         }
 
