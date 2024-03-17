@@ -45,14 +45,14 @@
             this.dateTimeStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.labelprofile = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxprofile = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxStudentName = new System.Windows.Forms.TextBox();
             this.textBoxStudentID = new System.Windows.Forms.TextBox();
             this.btnSignOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxprofile)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -246,15 +246,15 @@
             this.labelprofile.TabIndex = 16;
             this.labelprofile.Text = "Student Profile";
             // 
-            // pictureBox1
+            // pictureBoxprofile
             // 
-            this.pictureBox1.Image = global::ElectricReg.Properties.Resources.images_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 185);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxprofile.Image = global::ElectricReg.Properties.Resources.images_removebg_preview;
+            this.pictureBoxprofile.Location = new System.Drawing.Point(68, 185);
+            this.pictureBoxprofile.Name = "pictureBoxprofile";
+            this.pictureBoxprofile.Size = new System.Drawing.Size(137, 115);
+            this.pictureBoxprofile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxprofile.TabIndex = 17;
+            this.pictureBoxprofile.TabStop = false;
             // 
             // label2
             // 
@@ -321,7 +321,7 @@
             this.Controls.Add(this.textBoxStudentName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxprofile);
             this.Controls.Add(this.labelprofile);
             this.Controls.Add(this.dateTimeEnd);
             this.Controls.Add(this.dateTimeStart);
@@ -343,7 +343,7 @@
             this.Text = "Lectures";
             this.Load += new System.EventHandler(this.Lectures_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxprofile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +368,7 @@
         private System.Windows.Forms.DateTimePicker dateTimeStart;
         private System.Windows.Forms.DateTimePicker dateTimeEnd;
         private System.Windows.Forms.Label labelprofile;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxprofile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxStudentName;
