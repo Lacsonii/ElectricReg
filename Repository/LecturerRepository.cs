@@ -10,6 +10,7 @@ using System.Text.Json;
 using static Postgrest.QueryOptions;
 using System.Reflection;
 using ElectricReg.Models;
+using System.Security.Policy;
 
 namespace ElectricReg.Repository
 {
@@ -86,13 +87,16 @@ namespace ElectricReg.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<byte> getProfilePicture(String Image)
+        public async Task<string> getProfilePicture(string Image)
         {
             try
             {
-
-                var bytes = await DatabaseService.getClient.Storage.From("uploads").Download(Image, transformOptions: null);
-                return bytes;
+                int timeexp = 60;
+                string Url = await DatabaseService.getClient.Storage.From("uploads").CreateSignedUrl("public/"+Image, timeexp);
+                Console.WriteLine(Url);
+                return Url;
+                
+                
             }
             catch (Exception error)
             {
@@ -102,13 +106,17 @@ namespace ElectricReg.Repository
 
             
         }
-        public async Task<ProfileModel> getStudentByID(String StudentID)
+        public async Task<ProfileModel> getStudentByID(string StudentID)
         {
             try
             {
-                var results = await DatabaseService.getClient.From<ProfileModel>().Select(column => new object[] { column.StudentID,column.StudnetName, column.AvatarUrl}).Where(row => row.StudentID == StudentID).Get();
+                var results = await DatabaseService.getClient.From<ProfileModel>().Select(column => new object[] { column.StudentID, column.UpdatedAt, column.StudnetName, column.AvatarUrl}).Where(row => row.StudentID == StudentID).Get();
 
                 var student = results.Model;
+
+                Console.WriteLine(results.Model.AvatarUrl.ToString());
+
+               
                 return student;
 
             }
