@@ -63,6 +63,16 @@ namespace ElectricReg.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _431517324_1105675960636479_1578520677723923476_n {
+            get {
+                object obj = ResourceManager.GetObject("431517324_1105675960636479_1578520677723923476_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bluetooth_removebg {
             get {
                 object obj = ResourceManager.GetObject("Bluetooth-removebg", resourceCulture);
