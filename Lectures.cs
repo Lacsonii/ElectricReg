@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Forms;
 using ElectricReg.Models;
 using ElectricReg.Repository;
 using MySqlConnector;
+using Supabase.Gotrue;
 
 namespace ElectricReg
 {
@@ -22,7 +24,7 @@ namespace ElectricReg
             InitializeComponent();
             PopulateModules();
         }
-
+        LecturerRepository repository = new LecturerRepository();
         private void PopulateModules()
         {
             string[] program = { "DDW", "UBO", "DDOOCP", "CN", "CS", "DBMS", "EBU", "OSD" };
@@ -45,9 +47,8 @@ namespace ElectricReg
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 var data = await repository.getStudents(DateTime.UtcNow);
-               
+
                 DataTable studentTable = new DataTable();
                 studentTable.Columns.Add("Id");
                 studentTable.Columns.Add("StudentID");
@@ -68,7 +69,6 @@ namespace ElectricReg
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 var data = await repository.getStudents(DateTime.UtcNow);
                 DataTable studentTable = new DataTable();
 
@@ -103,7 +103,6 @@ namespace ElectricReg
             {
                 try
                 {
-                    LecturerRepository repository = new LecturerRepository();
                     List<RegisterModel> students = await repository.getStudent(searchText);
 
                     if (students.Count > 0)
@@ -144,7 +143,6 @@ namespace ElectricReg
 
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 List<RegisterModel> students = await repository.getMostAttendantStudents();
 
                 UpdateDataGridView(students);
@@ -159,7 +157,6 @@ namespace ElectricReg
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 List<RegisterModel> students = await repository.getAverageAttendantStudents();
 
                 UpdateDataGridView(students);
@@ -174,7 +171,6 @@ namespace ElectricReg
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 List<RegisterModel> students = await repository.getPoorAttendantStudents();
 
                 UpdateDataGridView(students);
@@ -189,7 +185,6 @@ namespace ElectricReg
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 List<RegisterModel> students = await repository.getNeverAttendedStudents();
 
                 UpdateDataGridView(students);
@@ -222,16 +217,12 @@ namespace ElectricReg
             }
         }
 
-        private void dateTimeStart_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private async void refreshIcon_Click(object sender, EventArgs e)
         {
             try
             {
-                LecturerRepository repository = new LecturerRepository();
                 var data = await repository.getStudents(DateTime.UtcNow);
                 DataTable studentTable = new DataTable();
 
@@ -247,6 +238,36 @@ namespace ElectricReg
             textBoxStudentName.Text = "";
             textBoxStudentID.Text = "";
             pictureBoxprofile.Refresh();
+        }
+
+        private async void dataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string studentID = dataGridViewStudents.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+
+            Console.WriteLine(dataGridViewStudents.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+            try
+            {
+                var data = await repository.getStudentByID(studentID);
+                Console.WriteLine(data);
+                textBoxStudentName.Text = data.StudnetName;
+                textBoxStudentID.Text = data.StudentID;
+
+                string picture = await repository.getProfilePicture(data.AvatarUrl.ToString());
+
+                Console.WriteLine(picture);
+
+            }
+            catch (Exception error)
+            {
+                // Handle the exception in a user-friendly way, e.g., displaying a message box
+                MessageBox.Show("Error: Unable to convert date/time value to System.DateTime. Please check the data in the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // You can also log the error or perform other actions here as needed
+            }
+
+            pictureBoxprofile.Refresh();
+
         }
     }
 }
