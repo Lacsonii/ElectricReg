@@ -140,7 +140,7 @@ namespace ElectricReg
             }
         }
 
-        private async void btnMA_Click(object sender, EventArgs e)
+        private async void btnMostAttendant_Click(object sender, EventArgs e)
         {
 
             try
@@ -155,7 +155,7 @@ namespace ElectricReg
             }
         }
 
-        private async void btnAA_Click(object sender, EventArgs e)
+        private async void btnAverageAttendant_Click(object sender, EventArgs e)
         {
             try
             {
@@ -169,7 +169,7 @@ namespace ElectricReg
             }
         }
 
-        private async void btnPA_Click(object sender, EventArgs e)
+        private async void btnPoorAttendant_Click(object sender, EventArgs e)
         {
             try
             {
@@ -183,7 +183,7 @@ namespace ElectricReg
             }
         }
 
-        private async void btnNA_Click(object sender, EventArgs e)
+        private async void btnNeverAttended_Click(object sender, EventArgs e)
         {
             try
             {
@@ -240,12 +240,12 @@ namespace ElectricReg
             textBoxStudentName.Text = "";
             textBoxStudentID.Text = "";
             pictureBoxprofile.Refresh();
-            return;
         }
 
         private async Task LoadImageFromUrlAsync(string imageUrl, PictureBox pictureBox)
         {
-            try {
+            try
+            {
                 using (HttpClient client = new HttpClient())
                 {
                     // Get the image data as a stream
@@ -257,7 +257,9 @@ namespace ElectricReg
                     // Set the PictureBox's Image property to this image
                     pictureBox.Image = image;
                 }
-            } catch (Exception error) {
+            }
+            catch (Exception error)
+            {
                 throw new Exception("User has no profile picture");
             }
         }
@@ -275,7 +277,7 @@ namespace ElectricReg
                 Console.WriteLine(data);
                 textBoxStudentName.Text = data.StudnetName;
                 textBoxStudentID.Text = data.StudentID;
-                
+
                 await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
             }
