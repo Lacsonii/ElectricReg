@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using static Postgrest.QueryOptions;
 using System.Reflection;
-using ElectricReg.Models.ElectricReg.Models;
+using ElectricReg.Models;
 
 namespace ElectricReg.Repository
 {
@@ -86,11 +86,37 @@ namespace ElectricReg.Repository
             throw new NotImplementedException();
         }
 
-        // Example method to retrieve students by ID
-        public async Task<List<RegisterModel>> getStudentByID(int studentId)
+        public async Task<byte> getProfilePicture(String Image)
         {
-            // Implement your logic to retrieve students by ID
-            throw new NotImplementedException();
+            try
+            {
+
+                var bytes = await DatabaseService.getClient.Storage.From("uploads").Download(Image, transformOptions: null);
+                return bytes;
+            }
+            catch (Exception error)
+            {
+
+                throw;
+            }
+
+            
+        }
+        public async Task<ProfileModel> getStudentByID(String StudentID)
+        {
+            try
+            {
+                var results = await DatabaseService.getClient.From<ProfileModel>().Select(column => new object[] { column.StudentID,column.StudnetName, column.AvatarUrl}).Where(row => row.StudentID == StudentID).Get();
+
+                var student = results.Model;
+                return student;
+
+            }
+            catch (Exception error)
+            {
+
+                throw;
+            }
         }
     }
 
