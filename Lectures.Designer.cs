@@ -36,10 +36,10 @@
             this.labelmodules = new System.Windows.Forms.Label();
             this.comboBoxPrograms = new System.Windows.Forms.ComboBox();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            this.btnMA = new System.Windows.Forms.Button();
-            this.btnNA = new System.Windows.Forms.Button();
-            this.btnPA = new System.Windows.Forms.Button();
-            this.btnAA = new System.Windows.Forms.Button();
+            this.btnMostAttendant = new System.Windows.Forms.Button();
+            this.btnNeverAttended = new System.Windows.Forms.Button();
+            this.btnPoorAttendant = new System.Windows.Forms.Button();
+            this.btnAverageAttendant = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnAdduser = new System.Windows.Forms.Button();
             this.labelstartdate = new System.Windows.Forms.Label();
@@ -121,65 +121,64 @@
             this.dataGridViewStudents.RowHeadersWidth = 51;
             this.dataGridViewStudents.Size = new System.Drawing.Size(732, 270);
             this.dataGridViewStudents.TabIndex = 5;
-            this.dataGridViewStudents.CellClick += dataGridViewStudents_CellClick;
             // 
-            // btnMA
+            // btnMostAttendant
             // 
-            this.btnMA.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMA.ForeColor = System.Drawing.Color.Black;
-            this.btnMA.Location = new System.Drawing.Point(270, 446);
-            this.btnMA.Name = "btnMA";
-            this.btnMA.Size = new System.Drawing.Size(111, 28);
-            this.btnMA.TabIndex = 6;
-            this.btnMA.Text = "Most Attendant";
-            this.btnMA.UseVisualStyleBackColor = false;
-            this.btnMA.Click += new System.EventHandler(this.btnMA_Click);
+            this.btnMostAttendant.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnMostAttendant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMostAttendant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostAttendant.ForeColor = System.Drawing.Color.Black;
+            this.btnMostAttendant.Location = new System.Drawing.Point(270, 446);
+            this.btnMostAttendant.Name = "btnMostAttendant";
+            this.btnMostAttendant.Size = new System.Drawing.Size(111, 28);
+            this.btnMostAttendant.TabIndex = 6;
+            this.btnMostAttendant.Text = "Most Attendant";
+            this.btnMostAttendant.UseVisualStyleBackColor = false;
+            this.btnMostAttendant.Click += new System.EventHandler(this.btnMostAttendant_Click);
             // 
-            // btnNA
+            // btnNeverAttended
             // 
-            this.btnNA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNA.Location = new System.Drawing.Point(681, 446);
-            this.btnNA.Name = "btnNA";
-            this.btnNA.Size = new System.Drawing.Size(111, 28);
-            this.btnNA.TabIndex = 7;
-            this.btnNA.Text = "Never Attended";
-            this.btnNA.UseVisualStyleBackColor = true;
-            this.btnNA.Click += new System.EventHandler(this.btnNA_Click);
+            this.btnNeverAttended.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNeverAttended.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNeverAttended.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNeverAttended.Location = new System.Drawing.Point(681, 446);
+            this.btnNeverAttended.Name = "btnNeverAttended";
+            this.btnNeverAttended.Size = new System.Drawing.Size(111, 28);
+            this.btnNeverAttended.TabIndex = 7;
+            this.btnNeverAttended.Text = "Never Attended";
+            this.btnNeverAttended.UseVisualStyleBackColor = true;
+            this.btnNeverAttended.Click += new System.EventHandler(this.btnNeverAttended_Click);
             // 
-            // btnPA
+            // btnPoorAttendant
             // 
-            this.btnPA.BackColor = System.Drawing.Color.LightBlue;
-            this.btnPA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPA.ForeColor = System.Drawing.Color.Black;
-            this.btnPA.Location = new System.Drawing.Point(547, 446);
-            this.btnPA.Name = "btnPA";
-            this.btnPA.Size = new System.Drawing.Size(111, 28);
-            this.btnPA.TabIndex = 8;
-            this.btnPA.Text = "Poor Attendant";
-            this.btnPA.UseVisualStyleBackColor = false;
-            this.btnPA.Click += new System.EventHandler(this.btnPA_Click);
+            this.btnPoorAttendant.BackColor = System.Drawing.Color.LightBlue;
+            this.btnPoorAttendant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPoorAttendant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPoorAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoorAttendant.ForeColor = System.Drawing.Color.Black;
+            this.btnPoorAttendant.Location = new System.Drawing.Point(547, 446);
+            this.btnPoorAttendant.Name = "btnPoorAttendant";
+            this.btnPoorAttendant.Size = new System.Drawing.Size(111, 28);
+            this.btnPoorAttendant.TabIndex = 8;
+            this.btnPoorAttendant.Text = "Poor Attendant";
+            this.btnPoorAttendant.UseVisualStyleBackColor = false;
+            this.btnPoorAttendant.Click += new System.EventHandler(this.btnPoorAttendant_Click);
             // 
-            // btnAA
+            // btnAverageAttendant
             // 
-            this.btnAA.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAA.ForeColor = System.Drawing.Color.Black;
-            this.btnAA.Location = new System.Drawing.Point(404, 446);
-            this.btnAA.Name = "btnAA";
-            this.btnAA.Size = new System.Drawing.Size(120, 28);
-            this.btnAA.TabIndex = 9;
-            this.btnAA.Text = "Average attendant";
-            this.btnAA.UseVisualStyleBackColor = false;
-            this.btnAA.Click += new System.EventHandler(this.btnAA_Click);
+            this.btnAverageAttendant.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAverageAttendant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAverageAttendant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAverageAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAverageAttendant.ForeColor = System.Drawing.Color.Black;
+            this.btnAverageAttendant.Location = new System.Drawing.Point(404, 446);
+            this.btnAverageAttendant.Name = "btnAverageAttendant";
+            this.btnAverageAttendant.Size = new System.Drawing.Size(120, 28);
+            this.btnAverageAttendant.TabIndex = 9;
+            this.btnAverageAttendant.Text = "Average attendant";
+            this.btnAverageAttendant.UseVisualStyleBackColor = false;
+            this.btnAverageAttendant.Click += new System.EventHandler(this.btnAverageAttendant_Click);
             // 
             // btnHome
             // 
@@ -352,10 +351,10 @@
             this.Controls.Add(this.labelstartdate);
             this.Controls.Add(this.btnAdduser);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnAA);
-            this.Controls.Add(this.btnPA);
-            this.Controls.Add(this.btnNA);
-            this.Controls.Add(this.btnMA);
+            this.Controls.Add(this.btnAverageAttendant);
+            this.Controls.Add(this.btnPoorAttendant);
+            this.Controls.Add(this.btnNeverAttended);
+            this.Controls.Add(this.btnMostAttendant);
             this.Controls.Add(this.dataGridViewStudents);
             this.Controls.Add(this.comboBoxPrograms);
             this.Controls.Add(this.labelmodules);
@@ -381,10 +380,10 @@
         private System.Windows.Forms.Label labelmodules;
         private System.Windows.Forms.ComboBox comboBoxPrograms;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
-        private System.Windows.Forms.Button btnMA;
-        private System.Windows.Forms.Button btnNA;
-        private System.Windows.Forms.Button btnPA;
-        private System.Windows.Forms.Button btnAA;
+        private System.Windows.Forms.Button btnMostAttendant;
+        private System.Windows.Forms.Button btnNeverAttended;
+        private System.Windows.Forms.Button btnPoorAttendant;
+        private System.Windows.Forms.Button btnAverageAttendant;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAdduser;
         private System.Windows.Forms.Label labelstartdate;
