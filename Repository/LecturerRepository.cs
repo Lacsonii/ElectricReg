@@ -79,9 +79,15 @@ namespace ElectricReg.Repository
 
                 var students = listOfStudents.Models;
 
-                var data = students.GroupBy(record => record.StudentID).Count();
+                var data = students.GroupBy(record => record.StudentID);
 
-                Console.WriteLine(data);
+                //
+                foreach ( var item in data)
+                {
+                    
+                    Console.WriteLine(item.Key);
+                }
+                //
             }
             catch (Exception error)
             {
