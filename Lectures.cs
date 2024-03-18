@@ -145,9 +145,8 @@ namespace ElectricReg
 
             try
             {
-                List<RegisterModel> students = await repository.getMostAttendantStudents();
+               repository.getAverageAttendantStudents();
 
-                UpdateDataGridView(students);
             }
             catch (Exception error)
             {
@@ -155,18 +154,9 @@ namespace ElectricReg
             }
         }
 
-        private async void btnAverageAttendant_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                List<RegisterModel> students = await repository.getAverageAttendantStudents();
 
-                UpdateDataGridView(students);
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("An error occurred: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private async void getAverageAttendantStudents_Click(object sender, EventArgs e)
+        {
         }
 
         private async void btnPoorAttendant_Click(object sender, EventArgs e)
@@ -264,7 +254,7 @@ namespace ElectricReg
             }
         }
 
-        private async void dataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void DataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string studentID = dataGridViewStudents.Rows[e.RowIndex].Cells[1].Value.ToString();
 
@@ -277,6 +267,8 @@ namespace ElectricReg
                 Console.WriteLine(data);
                 textBoxStudentName.Text = data.StudnetName;
                 textBoxStudentID.Text = data.StudentID;
+
+                
 
                 await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
@@ -291,5 +283,16 @@ namespace ElectricReg
             pictureBoxprofile.Refresh();
 
         }
+
+        private async void dateTimeStart_ValueChanged(object sender, EventArgs e)
+        {/*
+            await FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);*/
+        }
+
+        private async void dateTimeEnd_ValueChanged(object sender, EventArgs e)
+        {
+/*            await FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);*/
+        }
     }
+
 }

@@ -11,6 +11,8 @@ using static Postgrest.QueryOptions;
 using System.Reflection;
 using ElectricReg.Models;
 using System.Security.Policy;
+using Supabase.Interfaces;
+using System.Windows.Forms;
 
 namespace ElectricReg.Repository
 {
@@ -63,87 +65,49 @@ namespace ElectricReg.Repository
                 throw;
             }
         }
-        public async Task<List<string>> GetMostAttendantStudents()
+      
+
+        public async void getAverageAttendantStudents()
         {
+
             try
             {
-                // Retrieve all records from the RegisterModel
-                var allRecords = await DatabaseService.getClient
-                    .From<RegisterModel>()
-                    .Get();
 
-                // Group by StudentID and count the number of records for each student
-                var groupedRecords = allRecords
-                    .GroupBy(record => record.StudentID)
-                    .Select(group => new { StudentID = group.Key, Count = group.Count() });
+                var listOfStudents = await DatabaseService.getClient
+                  .From<RegisterModel>()
+                  .Select(column => new object[] { column.StudentID, column.Id }).Get();
 
-                // Sort by count in descending order and take the top 5 most attended students
-                var mostAttendantStudents = groupedRecords
-                    .OrderByDescending(group => group.Count)
-                    .Take(5)
-                    .Select(group => group.StudentID)
-                    .ToList();
+                var students = listOfStudents.Models;
 
-                return mostAttendantStudents;
-            }
-            catch (Exception error)
-            {
-                Console.WriteLine("Error retrieving most attendant students: " + error.Message);
-                throw; // Rethrow the exception to propagate it to the caller
-            }
-        }
+                var data = students.GroupBy(record => record.StudentID).Count();
 
-        public async Task<List<string>> GetAverageAttendantStudents()
-        {
-            try
-            {
-                // Retrieve all records from the RegisterModel
-                var allRecords = await DatabaseService.getClient
-                    .From<RegisterModel>()
-                    .Get();
-
-                // Group by StudentID and count the number of records for each student
-                var groupedRecords = allRecords
-                    .GroupBy(record => record.StudentID)
-                    .Select(group => new { StudentID = group.Key, Count = group.Count() });
-
-                // Sort by count and take 5 students from the middle of the list
-                var averageAttendantStudents = groupedRecords
-                    .OrderBy(group => group.Count)
-                    .Skip(groupedRecords.Count() / 2)
-                    .Take(5)
-                    .Select(group => group.StudentID)
-                    .ToList();
-
-                return averageAttendantStudents;
+                Console.WriteLine(data);
             }
             catch (Exception error)
             {
                 Console.WriteLine("Error retrieving average attendant students: " + error.Message);
                 throw; // Rethrow the exception to propagate it to the caller
             }
+
         }
 
-        // Implement similar methods for getPoorAttendantStudents and getNeverAttendedStudents
-
+        public async Task<List<RegisterModel>> getPoorAttendantStudents()
+        {
+            // Implement your logic to retrieve students with poor attendance
+            throw new NotImplementedException();
+        }
 
         public async Task<List<RegisterModel>> getNeverAttendedStudents()
         {
-            try
-            {
-                // Retrieve students with attendance count equal to 0
-                var results = await DatabaseService.getClient
-                    .From<RegisterModel>()
-                    .Where(row => row.AttendanceCount == 0)
-                    .Get();
+            // Implement your logic to retrieve students who never attended
+            throw new NotImplementedException();
+        }
 
-                return results.Models;
-            }
-            catch (Exception error)
-            {
-                Console.WriteLine("Error retrieving never attended students: " + error.Message);
-                throw; // Rethrow the exception to propagate it to the caller
-            }
+        // Example method to retrieve students by ID
+        public async Task<List<RegisterModel>> getStudentByID(int studentId)
+        {
+            // Implement your logic to retrieve students by ID
+            throw new NotImplementedException();
         }
 
 
@@ -184,6 +148,42 @@ namespace ElectricReg.Repository
                 throw;
             }
         }
+        private async void FilterByDateRange(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                // Construct SQL query to select rows within the specified date range
+                string query = @"
+                    SELECT *
+                    FROM RegisterModel
+                    WHERE CreatedAt >= @StartDate AND CreatedAt <= @EndDate;
+                ";
+
+                // Execute query with parameters
+                var response = await DatabaseService.getClient.From<RegisterModel>()
+                    .Get();
+                // Convert response to List<RegisterModel>
+                List<RegisterModel> filteredRows = new List<RegisterModel>();
+                /*foreach (var row in response.Data.Rows)
+                {
+                    // Assuming RegisterModel has a constructor that accepts the row data
+                    RegisterModel model = new RegisterModel
+                    {
+                        Id = Convert.ToInt32(row["Id"]),
+                        // Map other properties accordingly
+                    };
+                    filteredRows.Add(model);
+                }*/
+
+                // Update your UI with the filtered rows
+                //UpdateDataGridView(filteredRows);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("An error occurred: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 
 }

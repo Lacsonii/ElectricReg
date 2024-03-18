@@ -121,6 +121,7 @@
             this.dataGridViewStudents.RowHeadersWidth = 51;
             this.dataGridViewStudents.Size = new System.Drawing.Size(732, 270);
             this.dataGridViewStudents.TabIndex = 5;
+            this.dataGridViewStudents.CellClick += DataGridViewStudents_CellClick;
             // 
             // btnMostAttendant
             // 
@@ -178,7 +179,6 @@
             this.btnAverageAttendant.TabIndex = 9;
             this.btnAverageAttendant.Text = "Average attendant";
             this.btnAverageAttendant.UseVisualStyleBackColor = false;
-            this.btnAverageAttendant.Click += new System.EventHandler(this.btnAverageAttendant_Click);
             // 
             // btnHome
             // 
@@ -237,6 +237,7 @@
             this.dateTimeStart.Name = "dateTimeStart";
             this.dateTimeStart.Size = new System.Drawing.Size(131, 20);
             this.dateTimeStart.TabIndex = 14;
+            this.dateTimeStart.ValueChanged += new System.EventHandler(this.dateTimeStart_ValueChanged);
             // 
             // dateTimeEnd
             // 
@@ -244,6 +245,7 @@
             this.dateTimeEnd.Name = "dateTimeEnd";
             this.dateTimeEnd.Size = new System.Drawing.Size(131, 20);
             this.dateTimeEnd.TabIndex = 15;
+            this.dateTimeEnd.ValueChanged += new System.EventHandler(this.dateTimeEnd_ValueChanged);
             // 
             // labelprofile
             // 
