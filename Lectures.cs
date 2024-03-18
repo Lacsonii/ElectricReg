@@ -268,8 +268,6 @@ namespace ElectricReg
                 textBoxStudentName.Text = data.StudnetName;
                 textBoxStudentID.Text = data.StudentID;
 
-                
-
                 await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
             }
