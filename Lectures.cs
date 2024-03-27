@@ -145,7 +145,7 @@ namespace ElectricReg
 
             try
             {
-               repository.getAverageAttendantStudents();
+                repository.getAverageAttendantStudents();
 
             }
             catch (Exception error)
@@ -154,10 +154,6 @@ namespace ElectricReg
             }
         }
 
-
-        private async void getAverageAttendantStudents_Click(object sender, EventArgs e)
-        {
-        }
 
         private async void btnPoorAttendant_Click(object sender, EventArgs e)
         {
@@ -268,7 +264,7 @@ namespace ElectricReg
                 textBoxStudentName.Text = data.StudnetName;
                 textBoxStudentID.Text = data.StudentID;
 
-                
+
 
                 await LoadImageFromUrlAsync(data.AvatarUrl, pictureBoxprofile);
 
@@ -284,15 +280,31 @@ namespace ElectricReg
 
         }
 
-        private async void dateTimeStart_ValueChanged(object sender, EventArgs e)
-        {/*
-            await FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);*/
+        private void dateTimeStart_ValueChanged(object sender, EventArgs e)
+        {
+            FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);
         }
 
-        private async void dateTimeEnd_ValueChanged(object sender, EventArgs e)
+        private void dateTimeEnd_ValueChanged(object sender, EventArgs e)
         {
-/*            await FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);*/
+            FilterByDateRange(dateTimeStart.Value, dateTimeEnd.Value);
+        }
+
+        private void FilterByDateRange(DateTime startDate, DateTime endDate)
+        {
+            // Iterate through DataGridView rows
+            foreach (DataGridViewRow row in dataGridViewStudents.Rows)
+            {
+                // Get the value in the "CreatedAt" column for the current row
+                if (row.Cells["CreatedAt"].Value is DateTime createdAt)
+                {
+                    // Check if the createdAt falls within the specified date range
+                    bool withinRange = createdAt >= startDate && createdAt <= endDate;
+
+                    // Set the visibility of the row based on the filter condition
+                    row.Visible = withinRange;
+                }
+            }
         }
     }
-
 }
